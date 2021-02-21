@@ -1,0 +1,19 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  	<display-name>Archetype Created Web Application</display-name>
+  	<servlet>
+		<servlet-name>ClanServlet</servlet-name>
+		<servlet-class>ClanServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClanServlet</servlet-name>
+		<url-pattern>/clans/*</url-pattern>
+	</servlet-mapping>
+	<context-param> 
+		<param-name>CoCBearer</param-name> 
+		<param-value>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjhiMDljOWNhLTcyYzYtNDdlMC1hYmJiLWE1YThlNWZjNjc1NCIsImlhdCI6MTYxMzE5OTY5Mywic3ViIjoiZGV2ZWxvcGVyL2QxNGExY2IxLWZlYmEtMDM5OC03NWU2LWZkNGVjMjcwMzhkMSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjkxLjE4NC4wLjI1IiwiODIuMTczLjM5LjI0OCIsIjE3OC4yMzEuNjIuMTE0Il0sInR5cGUiOiJjbGllbnQifV19.V3a1VjS71sByOK4XcmcZxdWMwQSmdzqUcSkVJEeBuTUQIho5tqdfbzMfKanV2d3xj54aJtII90PmLg0Owh4uzQ</param-value> 
+	</context-param>
+</web-app>
