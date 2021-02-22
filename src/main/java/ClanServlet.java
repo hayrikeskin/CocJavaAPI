@@ -18,25 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 public class ClanServlet extends HttpServlet {	
 	String bearer;
 	
-	/*
-	 * @Override public void init(ServletConfig servletConfig) throws
-	 * ServletException{ super(servletConfig); this.bearer =
-	 * servletConfig.getInitParameter("CoCBearer"); }
-	 */	
-	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {		
 		String pathInfo = request.getPathInfo().substring(1);
 	    URL url = new URL("https://api.clashofclans.com/v1/clans/" + URLEncoder.encode(pathInfo, StandardCharsets.UTF_8.toString()));	    
         URLConnection urlc = url.openConnection();
+        
         this.bearer = getServletContext().getInitParameter("CoCBearer");
         String bearerAuth = "Bearer " + bearer;
         urlc.setRequestProperty ("Authorization", bearerAuth);
         urlc.setRequestProperty("Content-Type","application/json");
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(urlc.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(urlc.getInputStream(), "UTF-8"));
+        
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+        response.setHeader("Access-Control-Allow-Methods", "GET");
+        
         PrintWriter out = response.getWriter();
  		 
         out.print(in.readLine());
